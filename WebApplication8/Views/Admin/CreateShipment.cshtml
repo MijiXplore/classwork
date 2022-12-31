@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model WebApplication8.Models.shipment;
+     
+    <form asp-action="AddShipment" asp-controller="Admin" method="post">
+        <div class="border p-3 mt-4 row pb-2 text-primary">
+            <div class="form-group mt-3">
+                Order Number:
+                @Html.TextBoxFor(o => o.orderNumber, new {@class="form-control", placeholder="Enter Order Number", type="text"})
+                <span asp-validation-for="orderNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                Customer Name:
+                @Html.TextBoxFor(o => o.customerName, new {@class="form-control", placeholder="Enter Customer Name", type="text"})
+                <span asp-validation-for="customerName" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <label asp-for="orderQty" class="control-label">Quantity</label>
+                <input asp-for="orderQty" class="form-control" placeholder="Enter Order Quantity"/>
+                <span asp-validation-for="orderQty" class="text-danger"></span>
+            </div>
+            
+            
+            <div>
+                <input type="submit" class="btn btn-primary mt-3" value="Add Shipment" />
+            </div>
+        </div>
+
+    </form>
+
+    @section Scripts{
+        @{
+            <partial name="_ValidationScriptsPartial" />
+        }
+    }
+}

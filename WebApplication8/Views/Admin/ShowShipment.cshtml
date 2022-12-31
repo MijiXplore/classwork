@@ -1,0 +1,55 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<style>
+table, th, td {
+    border: 1px solid black;
+    padding: .5em;
+}
+
+</style>
+@{
+
+    var count = 1;
+
+
+
+    <h2>Shipment List:</h2>
+    
+    @if (ViewBag.shipmentList.Count != 0)
+    {
+        <table class="border-0">
+                <tr >
+                    <th>S.No</th>
+                    <th>Order Number</th>
+                    <th>Customer Name</th>
+                    <th>Quantity</th>
+                </tr>
+                @foreach (var eachshipment in (List<shipment>)ViewBag.shipmentList)
+            {
+                    <tr class="border-0">
+                        <td class="border-1">@count</td>
+                        <td class="border-1">@eachshipment.orderNumber</td>
+                        <td class="border-1">@eachshipment.customerName</td>
+                        <td class="border-1">@eachshipment.orderQty </td>
+                        <td class="border-0">
+                            <a class="btn btn-primary border-0"><i class="bi bi-pen-fill"></i>Edit</a>
+                        </td>
+                        <td class="border-0">
+                            <a class="btn btn-primary bg-danger border-0">Cancel</a>
+                        </td>
+                    </tr>
+                count+=1;
+            }
+
+        </table>
+    
+    }
+
+    <div>
+        <input type="submit" class="btn btn-primary mt-3 bg-secondary border-0" value="Create New Shipment" onclick="window.location='@Url.Action("CreateShipment", "Admin")'" />
+        <input type="submit" class="btn btn-primary mt-3 bg-danger border-0" value="Delete Shipment" onclick="window.location='@Url.Action("DeleteShipment", "Admin")'" />
+    </div>
+
+     
+}

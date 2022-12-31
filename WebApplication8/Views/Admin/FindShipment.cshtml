@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @model WebApplication8.Models.shipment;
+
+    <form asp-action="FindShipment" asp-controller="Admin" method="get">
+
+        Order Number:
+        @Html.TextBoxFor(o => o.orderNumber, new {@class="form-control", placeholder="Please enter Order Number"})
+        <span asp-validation-for="orderNumber" class="text-danger"></span>
+
+
+        <div>
+            <input type="submit" class="btn btn-primary mt-3" value="Submit" />
+        </div>
+    </form>
+}
