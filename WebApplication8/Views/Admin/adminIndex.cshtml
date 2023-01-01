@@ -3,10 +3,17 @@
 *@
 @{
 
+    @model WebApplication8.Models.user;
+    var name = ViewBag.name;
+
     ViewData["title"] = "Admin Dash";
 
     <h1>Admin Dashboard</h1>
+    <p>Hello @currentUser.name, what would you like to do today?</p>
     <input type="button" value="Add User" onclick="window.location='@Url.Action("CreateUser", "Admin")'" />
     <input type="button" value="Users List" onclick="window.location='@Url.Action("ShowUsers", "Admin")'" />
+    <input type="button" value="Create Shipment" onclick="window.location='@Url.Action("CreateShipment", "Admin")'" />
+    <input type="button" value="Shipment List" onclick="window.location='@Url.Action("ShowShipment", "Admin")'" />
+    <input type="button" value="Current Shipment" onclick="window.location='@Url.Action("FindShipment", "Admin")'" />
 
 }

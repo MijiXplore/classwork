@@ -10,11 +10,16 @@
     string password = "";
 
     <form asp-action="CheckCredentials" asp-controller="Home" method="post">
-        LoginId:
-        @Html.TextAreaFor(l => l.loginId);
-        Password:
-        @Html.TextAreaFor(l => l.password);
-        <input type="submit" value="Submit" />
+        <div class="border p-3 mt-4 row pb-2 text-primary" style="border-radius:3px">
+
+            Email:
+            @Html.TextBoxFor(l => l.loginId, new {@class="form-control", placeholder="Enter your email", type="email"})
+
+            Password:
+            @Html.TextBoxFor(l => l.password, new {@class="form-control", placeholder="Enter your password", type="password"})
+            <input type="submit" class="btn btn-primary mt-3" style="width:100px" value="Login" />
+
+        </div>
     </form>
     <p style="color:red">@ViewBag.errorMessage</p>
 }

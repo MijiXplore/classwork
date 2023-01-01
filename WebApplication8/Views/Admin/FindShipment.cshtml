@@ -4,7 +4,7 @@
 @{
     @model WebApplication8.Models.shipment;
 
-    <form asp-action="FindShipment" asp-controller="Admin" method="get">
+    <form asp-action="CurrentShipment" asp-controller="Admin" method="post">
 
         Order Number:
         @Html.TextBoxFor(o => o.orderNumber, new {@class="form-control", placeholder="Please enter Order Number"})

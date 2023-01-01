@@ -32,12 +32,22 @@ table, th, td {
                     <td>@eachUser.name</td>
                     <td>@eachUser.email</td>
                     <td>@eachUser.role </td>
+                    <td>
+                        <a class="btn btn-primary border-0"><i class="bi bi-pen-fill"></i>Edit</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-primary bg-danger border-0" asp-action="DeleteUser" asp-controller="Home">Delete</a>
+                    </td>
                 </tr>
                 count+=1;
             }
 
         </table>
         <th></th>
+
+        <div>
+            <a class="btn btn-primary bg-secondary mt-3 border-0" asp-action="CreateUser" asp-controller="Admin">Add New User</a>
+        </div>
     }
 
      

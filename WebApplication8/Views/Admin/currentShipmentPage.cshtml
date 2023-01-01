@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+
+    @model WebApplication8.Models.currentShipment;
+
+
+    var orderNumber = ViewBag.orderNum;
+
+    var count = 1;
+
+    ViewData["title"] = "Current Shipment";
+    <h1>Current Shipment</h1>
+    <h3>Shipment Information and Status</h3>
+    <p>Please see below for details on the Order number you provided  @currentShipment.orderNum</p>
+
+    <table class="border-0">
+                <tr >
+                    <th>S.No</th>
+                    <th>Order Number</th>
+                    <th>Customer Name</th>
+                    <th>Quantity</th>
+                </tr>
+                @foreach (var eachshipment in (List<shipment>)ViewBag.shipmentList)
+                {
+                        if (eachshipment.orderNumber == currentShipment.orderNum)
+                        {
+                            currentShipment.orderNum = eachshipment.orderNumber;
+                            currentShipment.customerName = eachshipment.customerName;
+                            
+                
+                             
+
+                            <tr class="border-0">
+                                <td class="border-1">@count</td>
+                                <td class="border-1">@currentShipment.orderNum</td>
+                                <td class="border-1">@currentShipment.customerName</td>
+                                <td class="border-1">@eachshipment.orderQty </td>
+                                <td class="border-0">
+                                    <a class="btn btn-primary border-0"><i class="bi bi-pen-fill"></i>Edit</a>
+                                </td>
+                                <td class="border-0">
+                                    <a class="btn btn-primary bg-danger border-0">Cancel</a>
+                                </td>
+                            </tr>
+                            @*count+=1;*@
+                        }
+                }
+
+        </table>
+    
+    
+
+    <div>
+        <input type="submit" class="btn btn-primary mt-3 bg-secondary border-0" value="Back to Shipment List" onclick="window.location='@Url.Action("ShowShipment", "Admin")'" />
+        <input type="submit" class="btn btn-primary mt-3 bg-danger border-0" value="Delete Shipment" onclick="window.location='@Url.Action("DeleteShipment", "Admin")'" />
+    </div>
+}

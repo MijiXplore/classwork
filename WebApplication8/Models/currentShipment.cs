@@ -4,7 +4,7 @@ namespace WebApplication8.Models
 {
     public abstract class currentShipment
     {
-        public static string? orderNumber { get; set; }
+        public static string? orderNum { get; set; }
         public static string? customerName { get; set;}
         public static string? orderQty { get; set;}
 

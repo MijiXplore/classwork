@@ -1,9 +1,9 @@
 ﻿@{
     @model WebApplication8.Models.shipment;
 
-    <form asp-action="RemoveShipment" asp-controller="Admin" method="post">
+    <form asp-action="RemoveShipment" asp-controller="Home" method="post">
 
-        Order Number:
+        OrderNumber:
         @Html.TextBoxFor(o => o.orderNumber, new {@class="form-control", placeholder="Please enter Order Number"})
         <span asp-validation-for="orderNumber" class="text-danger"></span>
 

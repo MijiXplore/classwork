@@ -27,6 +27,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlVXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/shitt/source/repos/userAccounts/WebApplication8/Views/Admin/currentShipmentPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cY3VycmVudFNoaXBtZW50UGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/shitt/source/repos/userAccounts/WebApplication8/Views/Admin/DeleteShipment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlU2hpcG1lbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -37,6 +41,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/shitt/source/repos/userAccounts/WebApplication8/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/shitt/source/repos/userAccounts/WebApplication8/Views/Admin/ShipmentError.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2hpcG1lbnRFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/shitt/source/repos/userAccounts/WebApplication8/Views/Admin/ShowShipment.cshtml]

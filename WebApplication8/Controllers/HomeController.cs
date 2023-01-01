@@ -77,5 +77,44 @@ namespace WebApplication8.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        public IActionResult RemoveShipment(shipment orderNumber)
+        {
+
+            Console.WriteLine(orderNumber);
+            foreach (var eachShipment in ShipmentList.shipmentList.ToList())
+            {
+                if (eachShipment.orderNumber == orderNumber.orderNumber)
+
+                {
+                    ShipmentList.shipmentList.Remove(eachShipment);
+                    return RedirectToAction("ShowShipment", "Admin");
+
+                }
+
+                else
+                {
+
+                    ViewBag.newerrorMessage = "A shipment with the order number could not be found.";
+                }
+
+
+
+            }
+
+            foreach (var eachShipment in ShipmentList.shipmentList.ToList())
+            {
+                if (eachShipment.orderNumber != orderNumber.orderNumber)
+
+                {
+                    return RedirectToAction("ShowShipment", "Admin");
+                }
+
+
+            }
+
+            return RedirectToAction("ShipmentError", "Admin");
+
+        }
     }
 }
